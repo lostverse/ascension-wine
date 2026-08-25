@@ -22,7 +22,6 @@
 # 3.📜 [Script de inicio de ejemplo](jugar.sh)
 
 ---
-
 🆘 Solución de Problemas
 Error / Síntoma	Causa Probable	Solución
 ERROR #132 (0xC0000005)	Falta DXVK o prefijo corrupto	Ejecuta winetricks dxvk y asegúrate de haber hecho wineboot -u tras instalar Wine 11.
@@ -45,3 +44,15 @@ Esta guía es una recopilación comunitaria para facilitar la instalación de As
 Basado en la experiencia de usuarios de Linux Mint y la documentación de WineHQ.
 Agradecimientos a la comunidad de r/ascensionproject y r/linux_gaming.
 ¡Disfruta de Azeroth en Linux! ⚔️🐧
+
+---
+---
+## ⚠️ Aviso Legal y Descargo de Responsabilidad
+
+Esta guía es un proyecto **comunitario y no oficial**. No está afiliada, endosada ni mantenida por **Ascension.gg**, **Blizzard Entertainment** o **WineHQ**.
+
+- **Uso bajo tu propia responsabilidad:** La instalación de software de terceros y la modificación de prefijos de Wine conllevan riesgos. El autor no se hace responsable de daños a tu sistema, pérdida de datos o problemas con tu cuenta de juego.
+- **Sin garantía:** Esta guía funciona en el momento de su publicación (Agosto 2026) en Linux Mint. Actualizaciones futuras del juego, de Wine o de tu distribución podrían romper la funcionalidad.
+- **Propiedad Intelectual:** World of Warcraft y sus activos son propiedad de Blizzard Entertainment. Ascension es un proyecto privado independiente. Esta guía solo facilita la ejecución del cliente oficial en Linux.
+
+*Si algo sale mal, ¡toca leer los logs y aprender! 🐧🛠️*   

@@ -1,6 +1,6 @@
 # 🐧 Ascension WoW en Linux Mint (Guía Definitiva 2026) 
 
-Guía completa y probada para instalar y ejecutar **Ascension WoW** en **Linux Mint** (y derivados de Ubuntu) utilizando **Wine 11**. Esta solución aborda específicamente los errores críticos: **Error 132**, **Pantalla Negra** y **Carga Infinita**.
+📋 Guía completa y probada para instalar y ejecutar **Ascension WoW** en **Linux Mint** (y derivados de Ubuntu) utilizando **Wine 11**. Esta solución aborda específicamente los errores críticos: **Error 132**, **Pantalla Negra** y **Carga Infinita**.
 
 > **Fecha de validación:** Agosto 2026  
 > **Sistema probado:** Linux Mint 22 (Zena)  

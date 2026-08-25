@@ -1,0 +1,67 @@
+=============================================================================
+GUÍA DEFINITIVA: ASCENSION WOW EN LINUX MINT (WINE 11) - AGOSTO 2026
+=============================================================================
+Solución probada para errores 132, pantalla negra y carga infinita.
+Autor: Comunidad Linux + Aporte crucial de instalación en "Program Files (x86)".
+
+📋 REQUISITOS PREVIOS
+---------------------
+- Sistema: Linux Mint 21/22 (o Ubuntu 22.04/24.04).
+- Wine: Versión 11.x o superior (Repositorio WineHQ 'noble' o 'jammy').
+- Herramientas: winetricks (sudo apt install winetricks).
+
+🚀 PASOS DE INSTALACIÓN (COPIA Y PEGA)
+--------------------------------------
+
+1. PREPARAR EL ENTORNO
+   Define la ruta donde instalarás el juego (ej: /mnt/sdb1/Games/Ascension).
+
+   export WINEPREFIX=/mnt/sdb1/Games/Ascension
+   export WINEARCH=win64
+   winecfg
+   (Acepta la ventana emergente para crear el prefijo).
+
+2. INSTALAR DEPENDENCIAS CRÍTICAS
+   Esto evita errores de librerías C++ y gráficos.
+
+   winetricks corefonts
+   winetricks -q vcrun2015
+   winetricks --force vcrun2022
+   winetricks dxvk
+
+3. INSTALAR EL JUEGO (PASO CLAVE)
+   - Ejecuta el instalador: wine Ascension-Setup.exe
+   - IMPORTANTE: Cuando pida la ruta, CAMBIALA MANUALMENTE a:
+     C:\Program Files (x86)\Ascension Launcher
+     (No dejes la por defecto "Program Files").
+
+4. CORRECCIONES POST-INSTALACIÓN
+   Antes de abrir el juego por primera vez:
+
+   export WINEPREFIX=/mnt/sdb1/Games/Ascension
+   wine reg add 'HKCU\Software\Wine\DllOverrides' /v divxtac /t REG_SZ /d disabled /f
+   export ELECTRON_DISABLE_SANDBOX=1
+
+5. ¡A JUGAR!
+   cd "$WINEPREFIX/drive_c/Program Files (x86)/Ascension Launcher"
+   wine "Ascension Launcher.exe"
+
+🛠️ SOLUCIÓN DE PROBLEMAS COMUNES
+--------------------------------
+| Problema                  | Solución                                      |
+|---------------------------|-----------------------------------------------|
+| Error 132 (Access Viol.)  | Instala DXVK (winetricks dxvk) y usa (x86).   |
+| Pantalla negra            | Exporta ELECTRON_DISABLE_SANDBOX=1.           |
+| Carga infinita (Barra)    | El juego está en "Program Files". Muévelo a   |
+|                           | "Program Files (x86)" o reinstala allí.       |
+| Launcher no abre          | Ejecuta el comando 'reg add' del Paso 4.      |
+
+💡 NOTAS FINALES
+---------------
+- Idioma: El juego viene en inglés. Para español, ve a Addons -> Mods 
+  and Locales en el launcher y marca "Spanish". (Puede estar inestable).
+- HDD: La primera carga puede tardar varios minutos (compilación de shaders).
+- PTR: Si pruebas el servidor de pruebas, instálalo en una carpeta aparte.
+
+¡Disfruta de Azeroth en Linux! ⚔️🐧
+=============================================================================   

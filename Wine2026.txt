@@ -1,0 +1,70 @@
+=============================================================================
+INSTALACIÓN DE WINE 11 EN LINUX MINT (PREPARACIÓN PARA ASCENSION)
+=============================================================================
+Guía rápida para instalar Wine 11 (Stable) y dependencias en Linux Mint 21/22.
+Fecha: Agosto 2026
+
+📋 REQUISITOS
+-------------
+- Sistema: Linux Mint 21 (Vanessa/Vera/Victoria) o Mint 22 (Wilma).
+- Conexión a internet estable.
+- Permisos de sudo (contraseña de administrador).
+
+🚀 PASOS DE INSTALACIÓN (COPIA Y PEGA EN TERMINAL)
+--------------------------------------------------
+
+1. ACTIVAR ARQUITECTURA DE 32 BITS (OBLIGATORIO)
+   Wine necesita librerías de 32 bits para funcionar correctamente.
+   
+   sudo dpkg --add-architecture i386
+
+2. AÑADIR REPOSITORIO OFICIAL DE WINEHQ
+   Usamos el repositorio 'noble' (Ubuntu 24.04) que es compatible con Mint 22
+   y funciona perfectamente en Mint 21.
+
+   sudo mkdir -pm755 /etc/apt/keyrings
+   sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+   sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
+
+   * NOTA: Si da error con 'noble', prueba cambiando 'noble' por 'jammy' en la URL.
+
+3. ACTUALIZAR E INSTALAR WINE 11 (STABLE)
+   Esto descargará la versión más reciente (11.x) y todas las dependencias.
+
+   sudo apt update
+   sudo apt install --install-recommends winehq-stable -y
+
+4. INSTALAR HERRAMIENTAS ADICIONALES
+   'winetricks' para gestionar librerías y 'mono-complete' para aplicaciones .NET.
+
+   sudo apt install winetricks mono-complete -y
+
+5. VERIFICAR INSTALACIÓN
+   Comprueba que se ha instalado correctamente la versión 11.
+
+   wine --version
+   (Debería mostrar algo como: wine-11.0 o superior)
+   
+   winetricks --version
+   (Debería mostrar la versión de winetricks)
+
+🛠️ SOLUCIÓN DE PROBLEMAS COMUNES
+--------------------------------
+| Problema                          | Solución                                      |
+|-----------------------------------|-----------------------------------------------|
+| Error con 'noble' en el paso 2    | Cambia 'noble' por 'jammy' en la URL del wget.|
+| "Unable to locate package"        | Ejecuta 'sudo apt update' de nuevo.           |
+| Error de dependencias rotas       | Ejecuta 'sudo apt --fix-broken install -y'.   |
+| Wine sigue en versión 9 o inferior| Borra los archivos en /etc/apt/sources.list.d/|
+|                                   | relacionados con wine y repite los pasos.     |
+
+💡 NOTAS FINALES
+---------------
+- Reinicia la terminal o la sesión después de instalar para asegurar que 
+  las variables de entorno se carguen correctamente.
+- No mezcles versiones de Wine de diferentes repositorios (ej: Snap, Flatpak, 
+  repositorio de Mint). Usa solo el de WineHQ para evitar conflictos.
+- Esta instalación es la base para luego seguir la "Guía Definitiva de Ascension".
+
+¡Listo! Ya tienes Wine 11 listo para configurar el juego. 🍷🐧
+=============================================================================   

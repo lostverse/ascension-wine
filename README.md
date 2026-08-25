@@ -19,6 +19,8 @@
 # 💡 PARA PROCEDER NECESITAS LEER 💡 
 # 1.📜 [Instalación de Wine 11.x](Wine2026.txt) 
 # 2.📜 [Instalación y configuración de Ascension](Ascension2026.txt) 
+# 3.📜 [Script de inicio de ejemplo](jugar.sh)
+
 ---
 
 🆘 Solución de Problemas
